@@ -38,4 +38,4 @@ script.js    → interactivity (typing, nav, reveal, cursor, form)
 
 ## 📫 Contact
 
-- Email: valentin.work1503@gmail.com
+- vanish.management@gmx.de
