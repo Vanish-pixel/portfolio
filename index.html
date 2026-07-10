@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Valentin — technology, community management and practical digital projects.">
+  <title>Valentin — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="header">
+    <a class="brand" href="#top">V.</a>
+
+    <nav aria-label="Main navigation">
+      <a href="#role">Role</a>
+      <a href="#projects">Projects</a>
+    </nav>
+
+    <a class="github" href="https://github.com/Vanish-pixel" target="_blank" rel="noreferrer">
+      GitHub ↗
+    </a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">HELLO.</p>
+
+        <h1>
+          I am
+          <span>Valentin.</span>
+        </h1>
+
+        <p class="intro">
+          Interested in technology, community management and practical digital projects.
+        </p>
+
+        <p class="role-line">
+          Community &amp; Event Management
+          <a href="https://skydinse.net" target="_blank" rel="noreferrer">
+            @ Skydinse.net
+          </a>
+        </p>
+
+        <a class="button" href="https://github.com/Vanish-pixel" target="_blank" rel="noreferrer">
+          View GitHub <span>↗</span>
+        </a>
+      </div>
+
+      <div class="hero-side">
+        <svg class="network-background" viewBox="0 0 600 700" aria-hidden="true">
+          <defs>
+            <linearGradient id="networkLine" x1="0" x2="1">
+              <stop offset="0%" stop-color="#2d332b" />
+              <stop offset="50%" stop-color="#9dff69" />
+              <stop offset="100%" stop-color="#2d332b" />
+            </linearGradient>
+          </defs>
+
+          <g class="grid">
+            <path d="M50 120H550"/>
+            <path d="M50 250H550"/>
+            <path d="M50 380H550"/>
+            <path d="M50 510H550"/>
+            <path d="M130 70V620"/>
+            <path d="M280 70V620"/>
+            <path d="M430 70V620"/>
+          </g>
+
+          <g class="connections">
+            <path d="M135 170 L300 330 L470 170"/>
+            <path d="M135 170 L130 500 L300 330"/>
+            <path d="M300 330 L470 505"/>
+            <path d="M470 170 L470 505"/>
+            <path d="M130 500 L470 505"/>
+          </g>
+
+          <g class="nodes">
+            <circle cx="135" cy="170" r="18"/>
+            <circle cx="470" cy="170" r="18"/>
+            <circle cx="300" cy="330" r="26" class="main-node"/>
+            <circle cx="130" cy="500" r="18"/>
+            <circle cx="470" cy="505" r="18"/>
+          </g>
+        </svg>
+
+        <canvas id="skin-viewer" aria-label="Interactive 3D Minecraft skin"></canvas>
+
+        <p class="skin-help">Drag to rotate · Scroll to zoom</p>
+
+        <div class="skin-fallback" id="skin-fallback" hidden>
+          Add your Minecraft skin as <code>skin.png</code>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="role">
+      <div class="section-heading">
+        <p class="eyebrow">01 — ROLE</p>
+        <h2>Community &amp;<br>Event Management</h2>
+      </div>
+
+      <div class="role-content">
+        <p>
+          Managing the community, coordinating community projects,
+          organizing events and supporting the community.
+        </p>
+
+        <a href="https://skydinse.net" target="_blank" rel="noreferrer">
+          Skydinse.net ↗
+        </a>
+      </div>
+
+      <div class="skills">
+        <span>C#</span>
+        <span>HTML &amp; CSS</span>
+        <span>Git &amp; GitHub</span>
+        <span>Networking</span>
+        <span>Discord Bots</span>
+        <span>Minecraft Servers</span>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="section-heading">
+        <p class="eyebrow">02 — PROJECTS</p>
+        <h2>Selected<br>work.</h2>
+      </div>
+
+      <article class="project-row">
+        <span class="project-number">01</span>
+
+        <div>
+          <h3>Discord Warning Bot</h3>
+          <p>
+            A Discord bot for internal warnings, structured warning levels and logging.
+          </p>
+
+          <div class="tags">
+            <span>JavaScript</span>
+            <span>Node.js</span>
+            <span>Discord.js</span>
+          </div>
+        </div>
+
+        <a href="https://github.com/Vanish-pixel/skydinse-warn-bot" target="_blank" rel="noreferrer">
+          View source ↗
+        </a>
+      </article>
+
+      <article class="project-row">
+        <span class="project-number">02</span>
+
+        <div>
+          <h3>Portfolio Website</h3>
+          <p>
+            A minimal personal website built with HTML, CSS and JavaScript and hosted on GitHub Pages.
+          </p>
+
+          <div class="tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+        </div>
+
+        <a href="https://github.com/Vanish-pixel/portfolio" target="_blank" rel="noreferrer">
+          View source ↗
+        </a>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Valentin</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/skinview3d@3.4.2/bundles/skinview3d.bundle.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
