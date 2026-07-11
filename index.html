@@ -1,22 +1,41 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio von Valentin – IT, Systeme, Netzwerke und Community Management.">
+  <meta name="description" content="Portfolio of Valentin — systems, networks, Linux and practical IT projects.">
+  <meta name="author" content="Valentin">
+  <meta name="theme-color" content="#070707">
   <title>Valentin | Portfolio</title>
+
+  <!-- Social sharing (Open Graph / Twitter) -->
+  <link rel="canonical" href="https://vanish-pixel.github.io/portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Valentin | Portfolio">
+  <meta property="og:description" content="Systems, networks, Linux and practical IT projects.">
+  <meta property="og:url" content="https://vanish-pixel.github.io/portfolio/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Valentin | Portfolio">
+  <meta name="twitter:description" content="Systems, networks, Linux and practical IT projects.">
+
+  <!-- Favicon (inline SVG, no extra request) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='sans-serif' font-weight='800' fill='%239cff57'%3EV%3C/text%3E%3C/svg%3E">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Only visible when navigating with the keyboard (Tab) -->
+  <a class="skip-link" href="#top">Skip to content</a>
+
   <div class="noise" aria-hidden="true"></div>
 
   <header class="site-header">
-    <a class="logo" href="#top" aria-label="Zur Startseite">V.</a>
+    <a class="discord-link" href="https://discord.com/" target="_blank" rel="noreferrer">Discord ↗</a>
 
-    <nav aria-label="Hauptnavigation">
+    <nav aria-label="Main navigation">
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
@@ -225,11 +244,13 @@
   </main>
 
   <footer>
-    <span>© <span id="year"></span> Valentin</span>
+    <!-- Fallback year in case JavaScript is disabled -->
+    <span>© <span id="year">2026</span> Valentin</span>
     <a href="https://github.com/Vanish-pixel" target="_blank" rel="noreferrer">GitHub ↗</a>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/skinview3d@3.4.2/bundles/skinview3d.bundle.js"></script>
-  <script src="script.js"></script>
+  <!-- defer = HTML parsing is never blocked; execution order stays the same -->
+  <script src="https://cdn.jsdelivr.net/npm/skinview3d@3.4.2/bundles/skinview3d.bundle.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
