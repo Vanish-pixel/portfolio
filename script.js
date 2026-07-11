@@ -71,6 +71,17 @@ function initSkinViewer() {
     return;
   }
 
+  // Sharper rendering on high-DPI displays (capped at 2x for performance).
+  // Re-applying the size makes the new pixel ratio take effect.
+  try {
+    if (viewer.renderer && typeof viewer.renderer.setPixelRatio === "function") {
+      viewer.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      viewer.setSize(viewer.width, viewer.height);
+    }
+  } catch (error) {
+    // Not critical — the viewer simply keeps its default resolution
+  }
+
   viewer.background = null;
   viewer.zoom = 0.8;
   viewer.fov = 45;

@@ -342,6 +342,13 @@ h2 {
   background: #080808;
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5);
   transform: rotate(-2deg);
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+/* Same hover behaviour as the portfolio window below */
+.project-card:hover .terminal {
+  transform: rotate(0deg) translateY(-4px);
+  border-color: #475044;
 }
 
 .terminal-top {
