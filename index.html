@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio von Valentin – IT, Systeme, Netzwerke und Community Management.">
+  <title>Valentin | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="logo" href="#top" aria-label="Zur Startseite">V.</a>
+
+    <nav aria-label="Hauptnavigation">
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+    </nav>
+
+    <a class="github-link" href="https://github.com/Vanish-pixel" target="_blank" rel="noreferrer">
+      GitHub ↗
+    </a>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-copy">
+        <p class="eyebrow">HELLO</p>
+        <h1>
+          I am
+          <span>Valentin.</span>
+        </h1>
+
+        <p class="hero-text">
+          Focused on systems, networks, cyber security and practical IT projects.
+        </p>
+
+        <div class="hero-actions">
+          <a class="primary-button" href="#projects">View projects</a>
+          <a class="text-link" href="https://github.com/Vanish-pixel" target="_blank" rel="noreferrer">
+            github.com/Vanish-pixel ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="skin-viewer-wrap">
+        <div class="skin-glow" aria-hidden="true"></div>
+        <canvas id="skin-viewer" aria-label="Interactive 3D Minecraft skin"></canvas>
+
+        <p class="skin-help">Drag to rotate · Scroll to zoom</p>
+
+        <div class="skin-fallback" id="skin-fallback" hidden>
+          Add your Minecraft skin as <code>skin.png</code>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span></span>
+        Scroll
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-heading">
+        <p class="eyebrow">WHAT I WORK WITH</p>
+        <h2>Skills & Tools</h2>
+      </div>
+
+      <div class="skill-grid">
+        <article class="skill-card">
+          <span>01</span>
+          <h3>Systems</h3>
+          <p>Linux, server administration and practical infrastructure work.</p>
+        </article>
+
+        <article class="skill-card">
+          <span>02</span>
+          <h3>Networking</h3>
+          <p>Network fundamentals, troubleshooting and system integration.</p>
+        </article>
+
+        <article class="skill-card">
+          <span>03</span>
+          <h3>Development</h3>
+          <p>C#, HTML, CSS, JavaScript, Git and GitHub.</p>
+        </article>
+
+        <article class="skill-card">
+          <span>04</span>
+          <h3>Communities</h3>
+          <p>Discord bots, Minecraft server administration and team workflows.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section experience" id="experience">
+      <div class="section-heading">
+        <p class="eyebrow">EXPERIENCE</p>
+        <h2>Community & Project Management</h2>
+      </div>
+
+      <div class="experience-card">
+        <div>
+          <p class="company">@ Skydinse.net</p>
+          <p class="experience-text">
+            Community management, coordination of community projects,
+            event organization and team support.
+          </p>
+        </div>
+        <a href="https://skydinse.net" target="_blank" rel="noreferrer">Visit website ↗</a>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-heading">
+        <p class="eyebrow">SELECTED WORK</p>
+        <h2>Projects</h2>
+      </div>
+
+      <div class="projects">
+        <article class="project-card">
+          <div class="project-preview bot-preview" aria-hidden="true">
+            <div class="terminal">
+              <div class="terminal-top">
+                <i></i><i></i><i></i>
+              </div>
+              <code>
+                <span>&gt; warning.create()</span>
+                <span class="muted">status: saved</span>
+                <span class="muted">level: 1–4</span>
+                <span class="success">bot online</span>
+              </code>
+            </div>
+          </div>
+
+          <div class="project-content">
+            <div>
+              <p class="project-number">01</p>
+              <h3>Discord Warning Bot</h3>
+            </div>
+            <p>
+              A Discord bot for internal team warnings, structured warning levels
+              and logging.
+            </p>
+            <div class="tags">
+              <span>JavaScript</span>
+              <span>Node.js</span>
+              <span>Discord</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-preview portfolio-preview" aria-hidden="true">
+            <div class="portfolio-window">
+              <div class="portfolio-window-bar">
+                <div class="window-dots">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </div>
+                <span>vanish-pixel.github.io/portfolio</span>
+              </div>
+
+              <div class="portfolio-page-preview">
+                <div class="preview-nav">
+                  <b>V.</b>
+                  <div>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+
+                <div class="preview-hero">
+                  <div class="preview-copy">
+                    <small>HELLO</small>
+                    <strong>I am</strong>
+                    <strong class="outline">Valentin.</strong>
+                    <p></p>
+                    <button type="button" tabindex="-1">View GitHub</button>
+                  </div>
+
+                  <div class="preview-skin">
+                    <span class="skin-head"></span>
+                    <span class="skin-body"></span>
+                    <span class="skin-arm left"></span>
+                    <span class="skin-arm right"></span>
+                    <span class="skin-leg left"></span>
+                    <span class="skin-leg right"></span>
+                  </div>
+                </div>
+
+                <div class="preview-footer-line">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-content">
+            <div>
+              <p class="project-number">02</p>
+              <h3>Portfolio Website</h3>
+            </div>
+            <p>
+              A lightweight personal portfolio built with HTML, CSS and
+              JavaScript and hosted on GitHub Pages.
+            </p>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Valentin</span>
+    <a href="https://github.com/Vanish-pixel" target="_blank" rel="noreferrer">GitHub ↗</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/skinview3d@3.4.2/bundles/skinview3d.bundle.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
