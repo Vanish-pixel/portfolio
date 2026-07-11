@@ -1,32 +1,46 @@
-document.getElementById("year").textContent = new Date().getFullYear();
-
-const revealElements = document.querySelectorAll(
-  ".section-heading, .skill-card, .experience-card, .project-card"
-);
-
-revealElements.forEach((element) => element.classList.add("reveal"));
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12 }
-);
-
-revealElements.forEach((element) => observer.observe(element));
-
+// Footer year (the HTML contains a fallback year for no-JS visitors)
+const yearElement = document.getElementById("year");
+if (yearElement) yearElement.textContent = new Date().getFullYear();
 
 const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
 ).matches;
 
+// ---------------------------------------------------------------
+// Scroll reveal
+// Falls back to "everything visible" when the user prefers
+// reduced motion or the browser lacks IntersectionObserver.
+// ---------------------------------------------------------------
+const revealElements = document.querySelectorAll(
+  ".section-heading, .skill-card, .experience-card, .project-card"
+);
+
+if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+  revealElements.forEach((element) => element.classList.add("reveal", "visible"));
+} else {
+  revealElements.forEach((element) => element.classList.add("reveal"));
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  revealElements.forEach((element) => observer.observe(element));
+}
+
+// ---------------------------------------------------------------
+// 3D Minecraft skin viewer
+// ---------------------------------------------------------------
 function showSkinFallback() {
-  document.getElementById("skin-fallback").hidden = false;
+  const fallback = document.getElementById("skin-fallback");
+  if (fallback) fallback.hidden = false;
 }
 
 function initSkinViewer() {
@@ -38,14 +52,24 @@ function initSkinViewer() {
     return;
   }
 
-  const bounds = canvas.getBoundingClientRect();
+  let viewer;
 
-  const viewer = new skinview3d.SkinViewer({
-    canvas,
-    width: Math.max(280, Math.round(bounds.width)),
-    height: Math.max(480, Math.round(bounds.height)),
-    skin: "skin.png"
-  });
+  // If WebGL is unavailable (old browser / blocked), show the
+  // fallback instead of leaving a broken canvas behind.
+  try {
+    const bounds = canvas.getBoundingClientRect();
+
+    viewer = new skinview3d.SkinViewer({
+      canvas,
+      width: Math.max(280, Math.round(bounds.width)),
+      height: Math.max(480, Math.round(bounds.height)),
+      skin: "skin.png"
+    });
+  } catch (error) {
+    showSkinFallback();
+    canvas.hidden = true;
+    return;
+  }
 
   viewer.background = null;
   viewer.zoom = 0.8;
@@ -84,10 +108,19 @@ function initSkinViewer() {
   canvas.addEventListener("pointercancel", resumeRotation);
   canvas.addEventListener("wheel", resumeRotation, { passive: true });
 
+  // Throttle resizes to one update per frame
+  let resizeScheduled = false;
+
   window.addEventListener("resize", () => {
-    const updatedBounds = canvas.getBoundingClientRect();
-    viewer.width = Math.max(280, Math.round(updatedBounds.width));
-    viewer.height = Math.max(460, Math.round(updatedBounds.height));
+    if (resizeScheduled) return;
+    resizeScheduled = true;
+
+    requestAnimationFrame(() => {
+      resizeScheduled = false;
+      const updatedBounds = canvas.getBoundingClientRect();
+      viewer.width = Math.max(280, Math.round(updatedBounds.width));
+      viewer.height = Math.max(460, Math.round(updatedBounds.height));
+    });
   });
 
   fetch("skin.png", { method: "HEAD", cache: "no-store" })

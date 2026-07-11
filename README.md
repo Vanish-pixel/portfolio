@@ -2,6 +2,8 @@
 
 My personal portfolio website, built with plain HTML, CSS and JavaScript.
 
+**Live:** https://vanish-pixel.github.io/portfolio/
+
 The page is hosted with GitHub Pages and includes an interactive 3D Minecraft skin in the hero section.
 
 ## Minecraft skin
@@ -24,3 +26,8 @@ skin.png
 ```
 
 No build step is required. Push the files to the repository and GitHub Pages handles the rest.
+
+
+## Header links
+
+The left header link opens Discord. Replace `https://discord.com/` in `index.html` with your own Discord profile or server invite if needed.

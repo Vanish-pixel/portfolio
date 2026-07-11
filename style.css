@@ -50,22 +50,13 @@ a {
   border-bottom: 1px solid var(--border);
 }
 
-.logo {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  font-weight: 800;
-}
-
 nav {
   display: flex;
   gap: 34px;
 }
 
 nav a,
+.discord-link,
 .github-link,
 .text-link,
 footer a {
@@ -75,10 +66,15 @@ footer a {
 }
 
 nav a:hover,
+.discord-link:hover,
 .github-link:hover,
 .text-link:hover,
 footer a:hover {
   color: var(--text);
+}
+
+.discord-link {
+  justify-self: start;
 }
 
 .github-link {
@@ -780,5 +776,54 @@ footer {
 
   .portfolio-window-bar > span {
     font-size: 0.48rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   Quality of life — accessibility & motion preferences.
+   Nothing here changes the visible design for mouse users.
+   ------------------------------------------------------------ */
+
+/* Skip link: hidden off-screen, appears only on keyboard focus */
+.skip-link {
+  position: fixed;
+  top: -80px;
+  left: 16px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  transition: top 180ms ease;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+/* Clear focus outline for keyboard navigation only */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
