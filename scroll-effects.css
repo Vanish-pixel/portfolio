@@ -1,0 +1,7 @@
+/* ScrollFloat + ScrollReveal — the split pieces only.
+   Typography stays with the site's own rules in style.css,
+   the wrapper spans stay inline so layout is untouched. */
+.char-word{display:inline-block;white-space:nowrap}
+.char{display:inline-block;will-change:opacity,transform}
+.word{display:inline-block;will-change:opacity,filter}
+@media(prefers-reduced-motion:reduce){.char,.word{opacity:1!important;filter:none!important;transform:none!important}}
